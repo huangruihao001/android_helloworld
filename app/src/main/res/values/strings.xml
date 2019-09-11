@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">helloworld</string>
+    <string name="test01">测试文字显示的字段</string>
+</resources>
