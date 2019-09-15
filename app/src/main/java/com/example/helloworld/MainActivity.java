@@ -1,13 +1,17 @@
 package com.example.helloworld;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.helloworld.gridview.GridViewActivity;
 import com.example.helloworld.listview.ListViewActivity;
+import com.example.helloworld.recyclerview.GridRecyclerViewActivity;
+import com.example.helloworld.recyclerview.RecyclerViewActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnCheckBox;
     private Button mBtnImageView;
     private Button mBtnListView;
+    private Button mBtnGridView;
+    private Button mBtnRv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         mBtnCheckBox = findViewById(R.id.btn_checkbox);
         mBtnImageView = findViewById(R.id.btn_imageview);
         mBtnListView = findViewById(R.id.btn_listview);
+        mBtnGridView = findViewById(R.id.btn_gridview);
+        mBtnRv = findViewById(R.id.btn_recyclerview);
 
         setListeners();
     }
@@ -43,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
         mBtnRadioButton.setOnClickListener(onClick);
         mBtnCheckBox.setOnClickListener(onClick);
         mBtnImageView.setOnClickListener(onClick);
+        mBtnListView.setOnClickListener(onClick);
+        mBtnGridView.setOnClickListener(onClick);
+        mBtnRv.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener{
@@ -78,6 +89,14 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.btn_listview:
                     //跳转到ListView演示界面
                     intent = new Intent(MainActivity.this, ListViewActivity.class);
+                    break;
+                case R.id.btn_gridview:
+                    //跳转到GridView演示界面
+                    intent = new Intent(MainActivity.this, GridViewActivity.class);
+                    break;
+                case R.id.btn_recyclerview:
+                    //跳转到RecyclerView演示界面
+                    intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
                     break;
             }
             startActivity(intent);
