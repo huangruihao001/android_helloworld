@@ -12,7 +12,7 @@ import com.example.helloworld.gridview.GridViewActivity;
 
 public class RecyclerViewActivity extends AppCompatActivity {
 
-    private Button mBtnLinear, mBtnHor, mBtnGrid;
+    private Button mBtnLinear, mBtnHor, mBtnGrid, mBtnPu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
         mBtnLinear = findViewById(R.id.btn_linear);
         mBtnHor = findViewById(R.id.btn_hor);
         mBtnGrid = findViewById(R.id.btn_grid);
+        mBtnPu = findViewById(R.id.btn_pu);
         mBtnLinear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,6 +40,13 @@ public class RecyclerViewActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(RecyclerViewActivity.this, GridRecyclerViewActivity.class);
+                startActivity(intent);
+            }
+        });
+        mBtnPu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RecyclerViewActivity.this, PuRecyclerViewActivity.class);
                 startActivity(intent);
             }
         });
